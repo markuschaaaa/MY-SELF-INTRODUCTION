@@ -1,8 +1,8 @@
 import Page from '../../core/templates/page';
 
-class MainPage extends Page{
+class SocailPage extends Page{
    static TextObject = {
-      MainTitle: "Main Page: Skills, Code-Example, my Projects, Social Networks"
+      MainTitle: "Social Page"
    }
 
    constructor(id:string){
@@ -11,10 +11,10 @@ class MainPage extends Page{
 
  
    render(){
-      const title = this.createHeaderTitle(MainPage.TextObject.MainTitle);
+      const title = this.createHeaderTitle(SocailPage.TextObject.MainTitle);
       this.container.append(title);
       return this.container;
    }
 }
 
-export default MainPage;
+export default SocailPage;

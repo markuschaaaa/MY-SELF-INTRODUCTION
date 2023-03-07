@@ -1,18 +1,27 @@
 import Component from "../../templates/components";
 import { PageIds } from "../../../pages/app";
 
+
 const Buttons = [
    {
       id: PageIds.MainPage,
       text: 'Main Page',
    },
    {
-      id: PageIds.SettingsPage,
-      text: 'Settings Page',
+      id: PageIds.SkillsPage,
+      text: 'Skills Page',
    },
    {
-      id: PageIds.StatisticsPage,
-      text: 'Statistics Page',
+      id: PageIds.CodeExample,
+      text: 'CodeExample Page',
+   },
+   {
+      id: PageIds.ProjectsPage,
+      text: 'Project Page',
+   },
+   {
+      id: PageIds.SocailPage,
+      text: 'Social Page',
    }
 ]
 
@@ -22,14 +31,22 @@ class Header extends Component {
    }
 
    renderPageButtons(){
-      const pageButtons = document.createElement('div')
+      const pageButtons = document.createElement('div');
+      const headerWrapper = document.createElement('div');
+      const name = document.createElement('div');
+      pageButtons.classList.add('header__buttons');
+      headerWrapper.classList.add('header__wrapper');
+      name.classList.add('header__name');
+      name.innerText = 'Mark'
       Buttons.forEach((button)=>{
          const buttonHTML = document.createElement('a');
          buttonHTML.href = `#${button.id}`;
          buttonHTML.innerText = button.text;
          pageButtons.append(buttonHTML);
       })
-      this.container.append(pageButtons)
+      headerWrapper.appendChild(name);
+      headerWrapper.appendChild(pageButtons);
+      this.container.append(headerWrapper)
    }
 
    render(){

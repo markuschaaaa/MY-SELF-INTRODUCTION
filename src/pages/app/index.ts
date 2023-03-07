@@ -1,13 +1,17 @@
 import Page from "../../core/templates/page";
 import MainPage from "../main";
-import SettingsPage from "../settings";
-import StatisticsPage from "../statistics";
+import SkillsPage from "../skills";
+import CodeExample from "../code-example";
+import ProjectsPage from "../projects";
+import SocailPage from "../social";
 import Header from "../../core/components/header";
 
 export const enum PageIds{
    MainPage = 'main-page',
-   SettingsPage = 'settings-page',
-   StatisticsPage = 'statistics-page',
+   SkillsPage = 'skills-page',
+   CodeExample = 'codeexample-page',
+   ProjectsPage = 'projects-page',
+   SocailPage = 'social-page',
 }
 
 class App{
@@ -25,10 +29,14 @@ class App{
 
       if(idPage === PageIds.MainPage){
          page = new MainPage(idPage);
-      }else if(idPage === PageIds.SettingsPage){
-         page = new SettingsPage(idPage);
-      }else if(idPage === PageIds.StatisticsPage){
-         page = new StatisticsPage(idPage);
+      }else if(idPage === PageIds.SkillsPage){
+         page = new SkillsPage(idPage);
+      }else if(idPage === PageIds.CodeExample){
+         page = new CodeExample(idPage);
+      }else if(idPage === PageIds.ProjectsPage){
+         page = new ProjectsPage(idPage);
+      }else if(idPage === PageIds.SocailPage){
+         page = new SocailPage(idPage);
       }
       if(page){
          const pageHTML = page.render();
