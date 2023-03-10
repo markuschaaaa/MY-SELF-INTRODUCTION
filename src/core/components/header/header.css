@@ -1,16 +1,38 @@
 .header{
-   border: 1px solid #000;
+   position: sticky;
+   top: 0px;
+   left: 0px;
+   background: #000;
+   padding: 30px 60px;
+   transition: all 0.5s ease-out;
+   z-index: 200;
+}
+.header__active{
+   background: #000;
    padding: 10px 20px;
-   border-radius: 0px 0px 10px 10px;
+   background: #252525;
 }
 .header__wrapper{
    display: flex;
    align-items: center;
    justify-content: space-between;
+
+   color: #ffffff;
+   text-decoration: none;
 }
 .header__buttons{
    max-width: 60%;
    display: flex;
    justify-content:space-between;
    flex: auto;
+   color: #ffffff;
+   text-decoration: none;
+}
+.header__buttons a{
+   color: #ffffff;
+   text-decoration: none;
+}.header__buttons a:hover {
+   transition: all 0.2s ease-in-out;;
+   color: aqua;
+   text-shadow: 1px 1px 2px rgb(255, 0, 191), 0 0 1em rgb(255, 0, 179), 0 0 0.2em rgb(255, 0, 170);
 }

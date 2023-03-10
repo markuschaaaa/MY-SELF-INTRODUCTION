@@ -1,0 +1,80 @@
+body {
+   overflow-x: hidden;
+   margin: 0px;
+}
+
+#current-page {
+   display: flex;
+   flex-direction: column;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.preview__wrapper{
+   overflow: hidden;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(180deg, rgb(0, 0, 0), rgb(69, 120, 139) 56%);
+}
+.preview__container{
+   position: relative;
+   top: 0;
+   left: 0;
+   max-width: 1150px;
+   width: 100%;
+   margin: 0px auto;
+   height: 100vh;
+   padding: 15px 0px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+.preview__forest{
+   width: 100%;
+   position: absolute;
+   bottom: -90px;
+   left: 0px;
+   margin: 0px auto;;
+   z-index: 100;
+}
+.preview__self-img{
+   z-index: 1;
+   position: relative;
+   top: 0px;
+   left: 0px;
+   max-width: 650px;
+   width: 50%;
+}
+.preview__text{
+   max-width: 380px;
+   width: 100%;
+   z-index: 1;
+   color: white;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+}
+.preview__text h1{
+   width: 340px;
+   font-size: 70px;
+   text-transform: uppercase;
+}
+.hey{
+   font-size: 104px;
+   font-weight: 700;
+   color: aliceblue;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   z-index: 0;
+}
+
+/* second block */
+
+.second__container{
+   height: 1000px;
+   width: 100%;
+   background: linear-gradient(180deg, rgb(0, 0, 0) 14%, rgb(86, 69, 139) 56%);
+}

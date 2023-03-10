@@ -1,6 +1,10 @@
-body{
-   max-width: 1150px;
-   width: 100%;
-   margin: 0px auto;
-   padding: 30px 0px;
+@font-face {
+   font-family: Oswald-Regular;
+   font-style: normal;
+   font-weight: 400;
+   src: local(Oswald-Regular);
+}
+*{
+   scroll-behavior: smooth;
+   font-family: "Oswald-Regular", sans-serif;
 }
