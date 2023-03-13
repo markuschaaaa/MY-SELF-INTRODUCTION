@@ -1,10 +1,12 @@
+import Header from "../../core/components/header";
+import Footer from "../../core/footer";
 import Page from "../../core/templates/page";
 import MainPage from "../main";
 import SkillsPage from "../skills";
 import CodeExample from "../code-example";
 import ProjectsPage from "../projects";
 import SocailPage from "../social";
-import Header from "../../core/components/header";
+
 
 export const enum PageIds{
    MainPage = 'main-page',
@@ -19,6 +21,13 @@ class App{
    private static defaultPageId:string = 'current-page'
    private initialPage: MainPage;
    private header: Header;
+   private footer: Footer;
+
+   constructor(){
+      this.initialPage = new MainPage('main-page')
+      this.header = new Header('header','header')
+      this.footer = new Footer('footer', 'footer')
+   }
 
    static renderNewPage(idPage:string){
      const currentPageHTML = document.querySelector(`#${App.defaultPageId}`)
@@ -42,25 +51,24 @@ class App{
          const pageHTML = page.render();
          pageHTML.id = App.defaultPageId;
          App.container.append(pageHTML);
+         const footer = document.querySelector('footer');
+         footer ? footer.before(pageHTML) : App.container.append(pageHTML);
       }
    }
 
-   private enableRouteChange(){
+   private async enableRouteChange(){
       window.addEventListener('hashchange',()=>{
          const hash = window.location.hash.slice(1)
          App.renderNewPage(hash)
       })
    }
 
-   constructor(){
-      this.initialPage = new MainPage('main-page')
-      this.header = new Header('header','header')
-   }
 
    run(){
       App.container.append(this.header.render())
-      App.renderNewPage('main-page')
+      App.renderNewPage('skills-page')
       this.enableRouteChange()
+      App.container.append(this.footer.render())
    }
 }
 

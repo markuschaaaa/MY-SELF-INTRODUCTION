@@ -1,5 +1,6 @@
 import Page from '../../core/templates/page';
 
+
 class MainPage extends Page{
    static TextObject = {
       MainTitle: "Hi, i'm Mark and i'm a frontend developer."
@@ -9,7 +10,7 @@ class MainPage extends Page{
       super(id);
    }
 
-   async mainPart(){
+   mainPart(){
       const mainContainerWrap = document.createElement('div');
       const mainContainer = document.createElement('div');
       const mainImageContainer = document.createElement('div');
@@ -18,25 +19,16 @@ class MainPage extends Page{
       const forestImage = document.createElement('img');
       const title = this.createHeaderTitle(MainPage.TextObject.MainTitle);
 
-      // second block
-      const secondSection = document.createElement('div');
-      secondSection.classList.add('second__container');
-
-
       mainContainerWrap.classList.add('preview__wrapper');
       mainContainer.classList.add('preview__container');
       mainImageContainer.classList.add('preview__img');
       mainTextContainer.classList.add('preview__text');
       mySelfImg.classList.add('preview__self-img');
       forestImage.classList.add('preview__forest');
-      mySelfImg.src = "/src/assets/me.png";
+      mySelfImg.src = "/src/assets/mountains/programmerpng.png";
       forestImage.src = "/src/assets/mountains/mountain.png";
-
-      // second block
       
       this.container.append(mainContainerWrap)
-      this.container.append(secondSection)
-      secondSection.innerText = 'TEST'
       mainContainerWrap.append(mainContainer,forestImage)
       mainTextContainer.append(title)
       mainImageContainer.append(mySelfImg)
@@ -47,12 +39,42 @@ class MainPage extends Page{
          mainTextContainer.style.opacity = String( 1 - value/1000);
          mainImageContainer.style.opacity = String( 1 - value/500);
          mainTextContainer.style.marginTop = value * 1.2 + 'px';
-         forestImage.style.bottom = -90 + -value * 0.13 + 'px';
       })
+   }
+   secondPart(){
+      const aboutMeWrapp = document.createElement('div');
+      const aboutMeContainer = document.createElement('div');
+      const aboutMeImgBox = document.createElement('div');
+      const aboutMeText = document.createElement('div');
+      const aboutMeImg = document.createElement('img');
+
+      aboutMeWrapp.classList.add('aboutme__wrapper');
+      aboutMeContainer.classList.add('aboutme__container');
+      aboutMeImgBox.classList.add('aboutme__img-box');
+      aboutMeImg.classList.add('aboutme__img')
+      aboutMeText.classList.add('aboutme__text');
+
+      aboutMeImg.src = "/src/assets/window.png"
+      aboutMeText.innerText = `I am a second-year student at Minsk State Linguistic University, and I am passionate about programming. I have been studying programming since high school, and in parallel to my university studies, I have taken various courses to enhance my knowledge and skills in programming. Through these courses, I have had the opportunity to work collaboratively in teams and engage in several projects. I am enthusiastic about the intersection between language and technology and eager to explore the endless possibilities this field offers.`      
+      aboutMeImgBox.append(aboutMeImg)
+      aboutMeContainer.append(aboutMeText,aboutMeImgBox)
+      aboutMeWrapp.append(aboutMeContainer)
+      this.container.append(aboutMeWrapp)
+
+      window.addEventListener("scroll", () =>{
+         let value = window.scrollY;
+         aboutMeText.style.top = -740 + value/1.2 + 'px';
+         aboutMeText.style.opacity = String( 0 + value/1000);
+         if(value > 1050){
+            aboutMeText.style.top = 150 + 'px';
+         }
+      })
+      
    }
 
    render(){
       this.mainPart()
+      this.secondPart()
       return this.container;
    }
 }
