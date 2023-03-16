@@ -5,23 +5,23 @@ import { PageIds } from "../../../pages/app";
 const Buttons = [
    {
       id: PageIds.MainPage,
-      text: 'Main Page',
+      text: 'Main',
    },
    {
       id: PageIds.SkillsPage,
-      text: 'Skills Page',
+      text: 'Skills',
    },
    {
       id: PageIds.CodeExample,
-      text: 'CodeExample Page',
+      text: 'Code Example',
    },
    {
       id: PageIds.ProjectsPage,
-      text: 'Project Page',
+      text: 'Projects',
    },
    {
       id: PageIds.SocailPage,
-      text: 'Social Page',
+      text: 'Social',
    }
 ]
 
