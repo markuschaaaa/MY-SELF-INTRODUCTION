@@ -50,7 +50,7 @@ class Header extends Component {
       
       window.addEventListener('scroll', () =>{
          let value = window.scrollY;
-         if(value >= 20){
+         if(value >= 1){
             const header = document.querySelector('.header') as HTMLElement;
             header.classList.add('header__active')
          }else{
