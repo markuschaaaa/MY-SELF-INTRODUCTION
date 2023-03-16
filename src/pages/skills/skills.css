@@ -1,5 +1,35 @@
 .skills__wrapper{
-   height: 1300px;
+   height: 100vh;
    width: 100vw;
-   background: linear-gradient(180deg, rgb(0, 0, 0), rgb(122, 232, 122) 100%);
+   background: linear-gradient(180deg, rgb(0, 0, 0), rgb(112, 1, 1) 100%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.skills__container {
+   width: 80%;
+   height: 70%;
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-start;
+}
+.skills__item{
+   color: #fff;
+   font-size: 26px;
+   font-weight: 700;
+   max-width: 500px;
+   line-height: 1.4em;
+}
+.skills__stack{
+   color: #fff;
+   font-size: 26px;
+   font-weight: 700;
+   max-width: 500px;
+   line-height: 1.4em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+.skills__stack img{
+   padding: 6px 5px;
 }

@@ -101,7 +101,8 @@ body {
    left: 0px;
 }
 .aboutme__text {
-   font-family: "Oswald-Regular", sans-serif;
+   line-height: 1.7em;
+   font-family: "Oswald", sans-serif;
    z-index: 0;
    position: relative;
    top: 0px;
