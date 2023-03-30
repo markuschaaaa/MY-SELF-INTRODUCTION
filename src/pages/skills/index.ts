@@ -9,7 +9,7 @@ class SkillsPage extends Page {
       super(id)
    }
 
-   addSkills(){
+   async addSkills(){
       const skillsWrapper = document.createElement("div");
       const skillsContainer = document.createElement("div");
       const skillsItemWrapper = document.createElement("div");
@@ -27,11 +27,10 @@ class SkillsPage extends Page {
       skillsItemThree.classList.add('skills__stack');
 
       skillsItemThree.innerText = 'My stack is:'
-      images.forEach((e)=>{
+      images.forEach((e,i)=>{
          const img = document.createElement('img');
          img.classList.add('skills__img')
          img.src = `/src/assets/logos/` + e;
-
          skillsItemThree.append(img)
       })
 
@@ -44,8 +43,32 @@ class SkillsPage extends Page {
       this.container.append(skillsWrapper);
    }
 
+   async showItem(){
+      const targets = document.querySelectorAll('.skills__item');
+      const stack = document.querySelectorAll('.skills__stack');
+      const wrapper = document.querySelectorAll('.skills__wrapper');
+      
+      const lazyLoad = (target: any) => {
+         const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) =>{
+               if(entry.isIntersecting){
+                  const elem = entry.target as HTMLElement;
+                  elem.classList.add('done')
+                  // elem.style.transition = `all 1${index}s ease-in-out`;
+                  observer.disconnect();
+               }
+            })
+         });
+         io.observe(target)
+      }
+      targets.forEach(lazyLoad)
+      stack.forEach(lazyLoad)
+      wrapper.forEach(lazyLoad)
+   }
+
+
    render() {
-      this.addSkills()
+      this.addSkills().then((data) => {this.showItem()})
       return this.container
    }
 }

@@ -9,7 +9,7 @@ class CodeExample extends Page{
       super(id)
    }
 
-   renderCodeExample(){
+   async renderCodeExample(){
       const codeExampleWrapper = document.createElement('div');
       const codeExampleContainer = document.createElement('div');
       const codeExampleText = document.createElement('div');
@@ -61,8 +61,28 @@ class CodeExample extends Page{
       this.container.appendChild(codeExampleWrapper);
    }
 
+    async showItem(){
+      const targets = document.querySelectorAll('.code__wrapper');
+      const text = document.querySelectorAll('.code__text')
+
+      const lazyLoad = (target: any) => {
+         const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry =>{
+               if(entry.isIntersecting){
+                  const elem = entry.target;
+                  elem.classList.add('done')
+                  observer.disconnect();
+               }
+            })
+         });
+         io.observe(target)
+      }
+      targets.forEach(lazyLoad)
+      text.forEach(lazyLoad)
+   }
+
    render() {
-      this.renderCodeExample();
+      this.renderCodeExample().then((data) => {this.showItem()});
       return this.container
    }
 }

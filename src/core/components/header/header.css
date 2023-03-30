@@ -36,3 +36,53 @@
    color: aqua;
    text-shadow: 1px 1px 2px rgb(0, 174, 255), 0 0 1em rgb(0, 174, 255), 0 0 0.2em rgb(0, 174, 255);
 }
+.header__buttons.burger {
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+   height: 80%;
+   font-size: 24px;
+}
+.header__buttons.burger a{
+   color: #000;
+}
+.header__buttons.burger a:hover {
+   text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(230, 233, 235);
+}
+
+/* BURGER */
+
+.burger__button{
+   display: none;
+   z-index: 999;
+   cursor: pointer;
+   transition: all 0.7s ease-in-out;
+}
+.burger__wrapper{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   padding: 15px;
+   background: #FFEFBA;
+   transform: translateX(-100%);
+   transition: transform 0.5s;
+}
+.burger__wrapper.active {
+   transform: translateX(0);
+
+}
+@media (width < 650px) {
+   .burger__button{
+      display: block;
+   }
+   .header__buttons{
+      display: none;
+   }
+}
+@media (width > 650px){
+   .burger__wrapper{
+      display: none;
+   }
+}

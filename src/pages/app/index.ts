@@ -66,7 +66,7 @@ class App{
 
    run(){
       App.container.append(this.header.render())
-      App.renderNewPage('social-page')
+      App.renderNewPage('codeexample-page')
       this.enableRouteChange()
       App.container.append(this.footer.render())
    }

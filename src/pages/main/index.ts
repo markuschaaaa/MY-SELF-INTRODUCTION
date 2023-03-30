@@ -10,7 +10,7 @@ class MainPage extends Page{
       super(id);
    }
 
-   mainPart(){
+   async mainPart(){
       const mainContainerWrap = document.createElement('div');
       const mainContainer = document.createElement('div');
       const mainImageContainer = document.createElement('div');
@@ -41,7 +41,7 @@ class MainPage extends Page{
          mainTextContainer.style.marginTop = value * 1.2 + 'px';
       })
    }
-   secondPart(){
+   async secondPart(){
       const aboutMeWrapp = document.createElement('div');
       const aboutMeContainer = document.createElement('div');
       const aboutMeImgBox = document.createElement('div');
@@ -54,6 +54,7 @@ class MainPage extends Page{
       aboutMeImg.classList.add('aboutme__img')
       aboutMeText.classList.add('aboutme__text');
 
+
       aboutMeImg.src = "/src/assets/window.png"
       aboutMeText.innerText = `I am a second-year student at Minsk State Linguistic University, and I am passionate about programming. I have been studying programming since high school, and in parallel to my university studies, I have taken various courses to enhance my knowledge and skills in programming. Through these courses, I have had the opportunity to work collaboratively in teams and engage in several projects. I am enthusiastic about the intersection between language and technology and eager to explore the endless possibilities this field offers.`      
       aboutMeImgBox.append(aboutMeImg)
@@ -64,17 +65,37 @@ class MainPage extends Page{
       window.addEventListener("scroll", () =>{
          let value = window.scrollY;
          aboutMeText.style.top = -740 + value/1.2 + 'px';
-         aboutMeText.style.opacity = String( 0 + value/1000);
+         aboutMeText.style.opacity = String( 0 + value/2000);
          if(value > 1050){
-            aboutMeText.style.top = 150 + 'px';
+            aboutMeText.style.top = 100 + 'px';
+            aboutMeText.style.opacity = '1'
          }
       })
       
    }
+   async showItem(){
+      const targets = document.querySelectorAll('.preview__self-img');
+      const aboutImg = document.querySelectorAll('.aboutme__img')
+      const wrapper = document.querySelectorAll('.preview__wrapper')
+      const lazyLoad = (target: any) => {
+         const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry =>{
+               if(entry.isIntersecting){
+                  const elem = entry.target;
+                  elem.classList.add('done') 
+                  observer.disconnect();
+               }
+            })
+         });
+         io.observe(target)
+      }
+      targets.forEach(lazyLoad)
+      aboutImg.forEach(lazyLoad)
+      wrapper.forEach(lazyLoad)
+   }
 
    render(){
-      this.mainPart()
-      this.secondPart()
+      this.mainPart().then((data) => {this.secondPart()}).then((data) => {this.showItem()})
       return this.container;
    }
 }
