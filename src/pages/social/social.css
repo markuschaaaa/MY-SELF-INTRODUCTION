@@ -50,7 +50,7 @@
    opacity: 1;
    transition: all 1.2s ease-in;
 }
-@media (width < 680px){
+@media screen and (max-width: 680px){
    .social__box{
       width: 50%;
    }
@@ -58,7 +58,7 @@
       flex-wrap: wrap;
    }
 }
-@media (width < 400px) {
+@media screen and (max-width: 400px) {
    .social__text{
       font-size: 12px;
    }
