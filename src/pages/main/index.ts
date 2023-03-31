@@ -25,7 +25,7 @@ class MainPage extends Page{
       mainTextContainer.classList.add('preview__text');
       mySelfImg.classList.add('preview__self-img');
       forestImage.classList.add('preview__forest');
-      mySelfImg.src = "src/assets/mountains/programmerpng.png";
+      mySelfImg.src = "../../assetssrc/mountains/programmerpng.png";
       forestImage.src = "../../../assets/mountains/mountain.png";
       
       this.container.append(mainContainerWrap)
