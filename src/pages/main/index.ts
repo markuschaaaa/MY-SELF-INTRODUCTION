@@ -26,7 +26,7 @@ class MainPage extends Page{
       mySelfImg.classList.add('preview__self-img');
       forestImage.classList.add('preview__forest');
       mySelfImg.src = "../../assets/mountains/programmerpng.png";
-      forestImage.src = "/src/assets/mountains/mountain.png";
+      forestImage.src = "../../assets/mountains/mountain.png";
       
       this.container.append(mainContainerWrap)
       mainContainerWrap.append(mainContainer,forestImage)
