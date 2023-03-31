@@ -1,6 +1,6 @@
 .skills__wrapper{
    opacity: 0;
-   height: 100vh;
+   height: 1200px;
    width: 100vw;
    background: linear-gradient(135deg, rgb(48, 204, 213), rgb(48, 146, 213) 52%, rgb(0, 255, 202) 100%);
    display: flex;
