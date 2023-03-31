@@ -58,7 +58,7 @@
       flex-wrap: wrap;
    }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
    .social__text{
       font-size: 12px;
    }
