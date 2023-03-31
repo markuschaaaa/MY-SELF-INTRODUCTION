@@ -38,7 +38,7 @@
 code{
    display: flex;
 }
-@media (width < 700px){
+@media screen and (max-width: 700px){
    .code__wrapper {
       height: 1000px;
    }
@@ -51,7 +51,7 @@ code{
       font-size: 12px;
    }
 }
-@media (width < 420px) {
+@media screen and (max-width: 420px){
    .code__container {
       min-width: 320px;
       height: 55%
