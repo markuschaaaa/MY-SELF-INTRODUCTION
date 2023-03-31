@@ -149,7 +149,7 @@ body {
       padding: 0px;
    }
 }
-@media screen and (min-width: 550px){
+@media screen and (max-width: 550px){
    .preview__text h1{
       padding: 20px;
    }
