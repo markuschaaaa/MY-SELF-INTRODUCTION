@@ -38,6 +38,12 @@ class Header extends Component {
       const burgerButton = document.createElement('div');
       const burgerWrapper = document.createElement('div');
 
+      for(let i = 0; i < 3; i++) {
+         const span = document.createElement('span');
+         span.classList.add('burger__span')
+         burgerButton.append(span)
+      }
+
       pageButtons.classList.add('header__buttons');
       headerWrapper.classList.add('header__wrapper');
       burgerButton.classList.add('burger__button');
@@ -45,7 +51,6 @@ class Header extends Component {
       name.classList.add('header__name');
 
       name.innerText = 'Mark'
-      burgerButton.innerHTML = 'X'
 
       burgerButton.addEventListener('click', () =>{
          burgerWrapper.classList.toggle('active')
@@ -81,6 +86,7 @@ class Header extends Component {
       const burgerText = burgerWrapper.querySelector('.header__buttons') as HTMLElement;
       const burgerButton = document.querySelector('.burger__button') as HTMLElement;
       const body = document.querySelector('body') as HTMLElement;
+      const burgerSpan = document.querySelectorAll('.burger__span');
       burgerText.classList.add('burger')
 
       const pageLinks = burgerText.querySelectorAll('a');
@@ -96,11 +102,34 @@ class Header extends Component {
       
       body.addEventListener('click', ()=>{
          if(burgerWrapper.classList.contains('active')){
-            console.log('test')
-            burgerButton.style.color = '#000'
+            burgerSpan.forEach((e,i)=>{
+               const elem = e as HTMLElement;
+               if(i == 0){
+                  elem.style.display = 'none';
+               }else if(i == 1){
+                  elem.style.top = '50%'
+                  elem.style.transform = 'translate(-50%, 0%) rotate(45deg)'
+               }else if(i == 2){
+                  elem.style.top = '50%'
+                  elem.style.transform = 'translate(-50%, 0%) rotate(-45deg)'
+               }
+               elem.style.backgroundColor = '#000'
+            })
             body.style.overflowY = 'hidden';
          }else{
-            burgerButton.style.color = 'white'
+            burgerSpan.forEach((e, i)=>{
+               const elem = e as HTMLElement;
+               if(i == 0){
+                  elem.style.display = 'block';
+               }else if(i == 1){
+                  elem.style.top = 'calc(50% - 5px)'
+                  elem.style.transform = 'translate(-50%, 0%) rotate(0deg)'
+               }else if(i == 2){
+                  elem.style.top = 'calc(50% + 5px)'
+                  elem.style.transform = 'translate(-50%, 0%) rotate(0deg)'
+               }
+               elem.style.backgroundColor = 'white'
+            })
             body.style.overflowY = 'scroll';
          }
       })
