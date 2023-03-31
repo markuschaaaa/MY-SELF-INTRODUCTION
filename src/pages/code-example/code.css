@@ -53,7 +53,7 @@ code{
 }
 @media screen and (max-width: 520px){
    .code__container {
-      min-width: 330px;
+      min-width: 90%;
       height: 55%
    }
 
