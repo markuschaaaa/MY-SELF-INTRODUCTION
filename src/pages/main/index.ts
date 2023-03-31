@@ -56,7 +56,7 @@ class MainPage extends Page{
 
 
       aboutMeImg.src = "/src/assets/window.png"
-      aboutMeText.innerText = `I am a second-year student at Minsk State Linguistic University, and I am passionate about programming. I have been studying programming since high school, and in parallel to my university studies, I have taken various courses to enhance my knowledge and skills in programming. Through these courses, I have had the opportunity to work collaboratively in teams and engage in several projects. I am enthusiastic about the intersection between language and technology and eager to explore the endless possibilities this field offers.`      
+      aboutMeText.innerText = `I am a second-year student at Minsk State Linguistic University, and I am passionate about programming.I have been studying programming since high school, and in parallel to my university studies, I have taken various courses to enhance my knowledge and skills in programming. Through these courses, I have had the opportunity to work collaboratively in teams and engage in several projects. I am enthusiastic about the intersection between language and technology and eager to explore the endless possibilities this field offers.`      
       aboutMeImgBox.append(aboutMeImg)
       aboutMeContainer.append(aboutMeText,aboutMeImgBox)
       aboutMeWrapp.append(aboutMeContainer)
