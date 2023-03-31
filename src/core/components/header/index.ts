@@ -96,7 +96,7 @@ class Header extends Component {
          })
       })
 
-      if (window.matchMedia('(min-width < 768px)')) {
+      if (window.matchMedia('(min-width < 850px)')) {
          burgerWrapper.classList.remove('active')
       }
       
