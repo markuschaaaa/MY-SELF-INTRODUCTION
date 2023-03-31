@@ -41,7 +41,7 @@ class SocailPage extends Page{
    
    async setSocialItem(){
       const socialLinks = ['mailto:chumakoff03@gmail.com', 'https://instagram.com/markuschaaaa', 'www.beispiel.com', 'callto:+375(33)313-10-56', 'https://t.me/markuschaaaa', 'https://vk.com/markushaaaaa']
-      const socialNames = ['Gmail: chumakoff03@gmail.com', 'Instagram: markuschaaaa', 'Linkedin: www.beispiel.com', 'Phone Number: +375(33)313-10-56', 'Telegram: https://t.me/markuschaaaa', 'VKontakte: https://vk.com/markushaaaaa']
+      const socialNames = ['Gmail: chumakoff03@gmail.com', 'Instagram: markuschaaaa', 'Linkedin: https://www.linkedin.com/in/mark-chumakov-322564270', 'Phone Number: +375(33)313-10-56', 'Telegram: https://t.me/markuschaaaa', 'VKontakte: https://vk.com/markushaaaaa']
       const item = document.querySelectorAll('.social__text');
       item.forEach((e, i)=>{
         let elem = e as HTMLLinkElement;

@@ -40,7 +40,7 @@ code{
 }
 @media (width < 700px){
    .code__wrapper {
-      height: 800px;
+      height: 1000px;
    }
    .code__container{
       min-width: 400px;
