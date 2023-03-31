@@ -101,7 +101,7 @@
       display: none;
    }
 }
-@media (width > 650px){
+@media (width > 850px){
    .burger__wrapper{
       display: none;
    }
